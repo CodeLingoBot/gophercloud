@@ -424,7 +424,7 @@ func CreateAssociateMember(c *gophercloud.ServiceClient, poolID string, opts Mem
 	return res
 }
 
-// Get retrieves a particular Pool Member based on its unique ID.
+// GetAssociateMember gets retrieves a particular Pool Member based on its unique ID.
 func GetAssociateMember(c *gophercloud.ServiceClient, poolID string, memberID string) GetResult {
 	var res GetResult
 	_, res.Err = c.Get(memberResourceURL(c, poolID, memberID), &res.Body, nil)
@@ -477,7 +477,7 @@ func UpdateAssociateMember(c *gophercloud.ServiceClient, poolID string, memberID
 	return res
 }
 
-// DisassociateMember will remove and disassociate a Member from a particular Pool.
+// DeleteMember will remove and disassociate a Member from a particular Pool.
 func DeleteMember(c *gophercloud.ServiceClient, poolID string, memberID string) DeleteResult {
 	var res DeleteResult
 	_, res.Err = c.Delete(memberResourceURL(c, poolID, memberID), nil)

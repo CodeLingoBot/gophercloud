@@ -73,7 +73,7 @@ type ShowOpts struct {
 	Limit int `q:"limit"`
 }
 
-// ToMeterShowQuery formats a ShowOpts into a query string.
+// ToShowQuery formats a ShowOpts into a query string.
 func (opts ShowOpts) ToShowQuery() (string, error) {
 	q, err := gophercloud.BuildQueryString(opts)
 	if err != nil {
@@ -121,7 +121,7 @@ type MeterStatisticsOpts struct {
 	Period int `q:"period"`
 }
 
-// ToStatisticsQuery formats a StatisticsOpts into a query string.
+// ToMeterStatisticsQuery formats a StatisticsOpts into a query string.
 func (opts MeterStatisticsOpts) ToMeterStatisticsQuery() (string, error) {
 	q, err := gophercloud.BuildQueryString(opts)
 	if err != nil {

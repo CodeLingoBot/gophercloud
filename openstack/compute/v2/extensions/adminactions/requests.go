@@ -21,7 +21,7 @@ type CreateBackupOpts struct {
 	Rotation int
 }
 
-// ToBackupCreateMap assembles a request body based on the contents of a CreateOpts.
+// ToCreateBackupMap assembles a request body based on the contents of a CreateOpts.
 func (opts CreateBackupOpts) ToCreateBackupMap() (map[string]interface{}, error) {
 	backup := make(map[string]interface{})
 
@@ -41,7 +41,7 @@ func (opts CreateBackupOpts) ToCreateBackupMap() (map[string]interface{}, error)
 	return map[string]interface{}{"createBackup": backup}, nil
 }
 
-// ResetNetwork is the admin operation to create a backup of a Compute Server.
+// CreateBackup is the admin operation to create a backup of a Compute Server.
 func CreateBackup(client *gophercloud.ServiceClient, id string, opts CreateBackupOpts) gophercloud.ErrResult {
 	var res gophercloud.ErrResult
 
@@ -91,7 +91,7 @@ type LiveMigrateOpts struct {
 	DiskOverCommit bool
 }
 
-// ToServerCreateMap assembles a request body based on the contents of a CreateOpts.
+// ToLiveMigrateMap assembles a request body based on the contents of a CreateOpts.
 func (opts LiveMigrateOpts) ToLiveMigrateMap() (map[string]interface{}, error) {
 	migration := make(map[string]interface{})
 
@@ -102,7 +102,7 @@ func (opts LiveMigrateOpts) ToLiveMigrateMap() (map[string]interface{}, error) {
 	return map[string]interface{}{"os-migrateLive": migration}, nil
 }
 
-// ResetNetwork is the admin operation to reset the network on a Compute Server.
+// LiveMigrate is the admin operation to reset the network on a Compute Server.
 func LiveMigrate(client *gophercloud.ServiceClient, id string, opts LiveMigrateOpts) gophercloud.ErrResult {
 	var res gophercloud.ErrResult
 

@@ -155,7 +155,7 @@ func HandleAssociateSuccessfully(t *testing.T) {
 	})
 }
 
-// HandleFixedAssociateSucessfully configures the test server to respond to a Post request
+// HandleAssociateFixedSuccessfully configures the test server to respond to a Post request
 // to associate an allocated floating IP with a specific fixed IP address
 func HandleAssociateFixedSuccessfully(t *testing.T) {
 	th.Mux.HandleFunc("/servers/4d8c3732-a248-40ed-bebc-539a6ffd25c0/action", func(w http.ResponseWriter, r *http.Request) {

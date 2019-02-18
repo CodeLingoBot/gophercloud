@@ -89,7 +89,7 @@ func Create(client *gophercloud.ServiceClient, auth AuthOptionsBuilder) CreateRe
 	return result
 }
 
-// Validates and retrieves information for user's token.
+// Get validates and retrieves information for user's token.
 func Get(client *gophercloud.ServiceClient, token string) GetResult {
 	var result GetResult
 	_, result.Err = client.Get(GetURL(client, token), &result.Body, &gophercloud.RequestOpts{

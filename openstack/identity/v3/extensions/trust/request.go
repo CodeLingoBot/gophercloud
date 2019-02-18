@@ -33,7 +33,7 @@ func (ao AuthOptionsExt) ToAuthOptionsV3Map(c *gophercloud.ServiceClient, scope 
 	return map[string]interface{}{"auth": authMap}, nil
 }
 
-// AuthenticateV3 explicitly authenticates against the identity v3 service.
+// AuthenticateV3Trust explicitly authenticates against the identity v3 service.
 func AuthenticateV3Trust(client *gophercloud.ProviderClient, options AuthOptionsExt) error {
 	return trustv3auth(client, "", options)
 }
